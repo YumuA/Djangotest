@@ -20,5 +20,5 @@ from backend.views import obtener_datos_de_api  # Asegúrate de importar correct
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/obtener_datos/', obtener_datos_de_api, name='obtener_datos_api'),
+    path('obtener_datos/', obtener_datos_de_api, name='obtener_datos_api'),
 ]

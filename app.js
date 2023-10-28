@@ -16,13 +16,14 @@ const pool = new Pool({
 
 app.get('/test', async (req, res) => {
   try {
-    const result = await pool.query('SELECT * FROM mascota');
+    const result = await pool.query('SELECT * FROM mascota join dueno on dueno.id = mascota.dueño_id');
     res.json(result.rows);
   } catch (error) {
     console.error('Error al realizar la consulta:', error.message);
     res.status(500).json({ error: 'Error al realizar la consulta' });
   }
 });
+
 
 app.listen(port, () => {
   console.log(`Servidor iniciado en http://localhost:${port}`);
